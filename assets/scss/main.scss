@@ -1,0 +1,9 @@
+@import "./variables";
+@import "./mixins";
+@import "./typography";
+@import "./reset";
+
+html {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
