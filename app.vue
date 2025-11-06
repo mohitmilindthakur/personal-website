@@ -18,6 +18,7 @@ setTimeout(() => {
 
   gtag('event', 'page_view', { testing: "test" })
   gtag('event', 'testing', { testing: "test" })
+  window.dataLayer.push({ event: 'object', data: {test: 'testing'}});
 }, 5000);
 
 useHead({
