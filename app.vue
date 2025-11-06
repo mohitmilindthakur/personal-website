@@ -10,9 +10,9 @@ import "@/assets/scss/main.scss";
 setTimeout(() => {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  gtag('ecommerce_purchase', new Date());
 
-  gtag('config', 'G-FQLNE5QQDP');
+  gtag('purchase', 'testing');
 });
 
 useHead({
