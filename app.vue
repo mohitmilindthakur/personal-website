@@ -17,6 +17,7 @@ setTimeout(() => {
   });
 
   gtag('event', 'page_view', { testing: "test" })
+  gtag('event', 'testing', { testing: "test" })
 }, 5000);
 
 useHead({
