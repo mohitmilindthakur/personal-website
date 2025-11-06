@@ -10,10 +10,14 @@ import "@/assets/scss/main.scss";
 setTimeout(() => {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('ecommerce_purchase', new Date());
+  gtag('js', new Date());
 
-  gtag('purchase', 'testing');
-});
+  gtag('config', 'G-FQLNE5QQDP', {
+    debug: true
+  });
+
+  gtag('event', 'page_view', { testing: "test" })
+}, 5000);
 
 useHead({
   title: "Testing",
