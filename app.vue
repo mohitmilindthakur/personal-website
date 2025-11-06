@@ -24,7 +24,8 @@ onMounted(() => {
 
     // gtag('event', 'page_view', { testing: "test" })
     // gtag('event', 'testing', { testing: "test" })
-    window.dataLayer.push({ event: 'google-tag', data: {test: 'testing'}});
+    window.dataLayer.push({ event: 'google-tag1', data: {test: 'testing'}});
+    window.dataLayer.push({ event: 'hello', data: {test: 'testing'}});
   }, 5000);
 
 })
