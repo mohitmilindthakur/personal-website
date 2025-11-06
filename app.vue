@@ -7,4 +7,16 @@
 
 <script setup>
 import "@/assets/scss/main.scss";
+setTimeout(() => {
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FQLNE5QQDP');
+});
+
+useHead({
+  title: "Testing",
+  script: [{ src: "https://www.googletagmanager.com/gtag/js?id=G-FQLNE5QQDP" }]
+})
 </script>
