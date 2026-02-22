@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <NuxtRouteAnnouncer />
     <NuxtPage />
   </div>
@@ -37,3 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-M63K7CJN');` }]
 })
 </script>
+
+<style lang="scss">
+@import "style/main.scss";
+</style>

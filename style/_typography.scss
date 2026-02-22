@@ -1,0 +1,62 @@
+body {
+  font-family: "Geist Mono", monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: var(--body-md);
+  line-height: 1.6;
+}
+
+:root {
+  /* Display */
+  --display-2xl: clamp(6.4rem, 6vw, 9.6rem);    /* 64px → 96px */
+  --display-xl: clamp(4.8rem, 5vw, 8rem);        /* 48px → 80px */
+  --display-lg: clamp(4rem, 4vw, 6.4rem);        /* 40px → 64px */
+
+  /* Headings */
+  --heading-h1: clamp(3.2rem, 3.5vw, 4.8rem);   /* 32px → 48px */
+  --heading-h2: clamp(2.8rem, 3vw, 4rem);        /* 28px → 40px */
+  --heading-h3: clamp(2.4rem, 2.5vw, 3.2rem);   /* 24px → 32px */
+  --heading-h4: clamp(2rem, 2vw, 2.8rem);        /* 20px → 28px */
+  --heading-h5: clamp(1.8rem, 1.5vw, 2.4rem);   /* 18px → 24px */
+  --heading-h6: clamp(1.6rem, 1.25vw, 2rem);    /* 16px → 20px */
+
+  /* Body */
+  --body-xl: clamp(2rem, 1.5vw, 2.4rem);        /* 20px → 24px */
+  --body-lg: clamp(1.8rem, 1.25vw, 2rem);       /* 18px → 20px */
+  --body-md: clamp(1.6rem, 1vw, 1.8rem);        /* 16px → 18px */
+  --body-sm: 1.4rem;                              /* 14px - fixed */
+  --body-xs: 1.2rem;                              /* 12px - fixed */
+
+  /* Labels */
+  --label-lg: 1.4rem;    /* 14px */
+  --label-md: 1.3rem;    /* 13px */
+  --label-sm: 1.2rem;    /* 12px */
+
+  /* Captions */
+  --caption: 1.2rem;     /* 12px */
+  --overline: 1.1rem;    /* 11px */
+}
+
+h1, .text-h1 { font-size: var(--heading-h1); line-height: 1.2; }
+h2, .text-h2 { font-size: var(--heading-h2); line-height: 1.25; }
+h3 { font-size: var(--heading-h3); line-height: 1.3; }
+h4 { font-size: var(--heading-h4); line-height: 1.35; }
+h5 { font-size: var(--heading-h5); line-height: 1.4; }
+h6 { font-size: var(--heading-h6); line-height: 1.4; }
+
+.text-xl  { font-size: var(--body-xl); }
+.text-lg  { font-size: var(--body-lg); }
+.text-md  { font-size: var(--body-md); }
+.text-sm  { font-size: var(--body-sm); }
+.text-xs  { font-size: var(--body-xs); }
+
+.label-lg { font-size: var(--label-lg); font-weight: 500; letter-spacing: 0.01em; }
+.label-md { font-size: var(--label-md); font-weight: 500; letter-spacing: 0.01em; }
+.label-sm { font-size: var(--label-sm); font-weight: 500; letter-spacing: 0.01em; }
+
+.caption  { font-size: var(--caption); color: #666; }
+.overline { font-size: var(--overline); text-transform: uppercase; letter-spacing: 0.08em; }
+
+.text-display-xl {
+    font-size: var(--display-xl);
+}
