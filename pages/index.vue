@@ -14,7 +14,7 @@
     </header>
 
     <!-- SECTION 1: HELLO WORLD -->
-    <section class="hello-world max-width-container">
+    <section class="hello-world max-width-container" id="about">
         <div class="hello-world__text text-h2">
             <div class="hello">
                 Hello
@@ -45,7 +45,9 @@ Welcome to my corner of it. Professionally functional. Existentially unresolved.
         <span class="text-love"> &hearts; </span>
         deployed with doubt</div>
 </template>
-<script setup></script>
+<script setup>
+console.log("testing");
+</script>
 
 <style scoped lang="scss">
 
