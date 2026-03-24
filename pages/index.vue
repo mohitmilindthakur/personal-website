@@ -46,7 +46,7 @@ Welcome to my corner of it. Professionally functional. Existentially unresolved.
         deployed with doubt</div>
 </template>
 <script setup>
-console.log("testing");
+// console.log("testing");
 </script>
 
 <style scoped lang="scss">
