@@ -16,15 +16,15 @@
       <section id="about" class="hero section">
         <p class="eyebrow">FRONTEND DEVELOPER</p>
         <h1>Professionally functional. Existentially unresolved.</h1>
-        <!-- <p class="lead">
-          I write code that tells machines what to render. They comply without hesitation, while I wonder
-          whether this universe is just a side project shipped to production too early.
-        </p> -->
         <p class="lead">
 Frontend Developer with 6.5 years of experience in Vue.js and React, working across fintech, logistics,
 healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
 solution used by one of India's largest brokers. Previously developed web applications for brands like
 Nescafe and Starbucks, and SaaS products in logistics and healthcare.
+        </p>
+        <p class="lead">
+          I write code that tells machines what to render. They comply without hesitation, while I wonder
+          whether this universe is just a side project shipped to production too early.
         </p>
 
         <div class="hero-actions">

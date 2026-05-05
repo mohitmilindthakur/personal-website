@@ -7,6 +7,13 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: "Mohit Thakur | Frontend Developer",
+      meta: [
+        { name: "description", content: "Frontend Developer with 6.5 years of experience in Vue.js and React." },
+      ],
+      link: [
+        { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      ],
       htmlAttrs: {
         class: "dark"
       }
