@@ -1,26 +1,31 @@
 <template>
   <div class="page">
-    <header class="site-header">
-      <nav class="max-width-container nav">
-        <a class="brand" href="#home">mohit.thakur()</a>
-        <ul class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div v-if="showIntroAnimation" class="intro-screen" aria-hidden="true">
+      <p class="typewriter">Hello World</p>
+    </div>
 
-    <main id="home" class="max-width-container content">
+    <div class="page-content" :class="{ 'is-visible': showPageContent }">
+      <header class="site-header">
+        <nav class="max-width-container nav">
+          <a class="brand" href="#home">mohit.thakur()</a>
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="home" class="max-width-container content">
       <section id="about" class="hero section">
         <p class="eyebrow">FRONTEND DEVELOPER</p>
         <h1>Professionally functional. Existentially unresolved.</h1>
         <p class="lead">
-Frontend Developer with 6.5 years of experience in Vue.js and React, working across fintech, logistics,
-healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
-solution used by one of India's largest brokers. Previously developed web applications for brands like
-Nescafe and Starbucks, and SaaS products in logistics and healthcare.
+  Frontend Developer with 6.5 years of experience in Vue.js and React, working across fintech, logistics,
+  healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
+  solution used by one of India's largest brokers. Previously developed web applications for brands like
+  Nescafe and Starbucks, and SaaS products in logistics and healthcare.
         </p>
         <p class="lead">
           I write code that tells machines what to render. They comply without hesitation, while I wonder
@@ -56,14 +61,9 @@ Nescafe and Starbucks, and SaaS products in logistics and healthcare.
               <li v-for="highlight in project.highlights" :key="highlight">{{ highlight }}</li>
             </ul>
             <p class="project-impact">{{ project.impact }}</p>
-            <div class="project-bottom">
-              <ul class="tag-list">
-                <li v-for="tag in project.stack" :key="tag">{{ tag }}</li>
-              </ul>
-              <div class="project-links">
-                <a :href="project.liveUrl" target="_blank" rel="noopener">Website</a>
-              </div>
-            </div>
+            <ul class="tag-list">
+              <li v-for="tag in project.stack" :key="tag">{{ tag }}</li>
+            </ul>
           </article>
         </div>
       </section>
@@ -124,15 +124,39 @@ Nescafe and Starbucks, and SaaS products in logistics and healthcare.
           </div>
         </div>
       </section>
-    </main>
+      </main>
 
-    <footer class="footer">
-      Built with <span class="text-love">&hearts;</span> deployed with doubt.
-    </footer>
+      <footer class="footer">
+        Built with <span class="text-love">&hearts;</span> deployed with doubt.
+      </footer>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { onBeforeUnmount, onMounted, ref } from "vue";
+
+const showPageContent = ref(false);
+const showIntroAnimation = ref(true);
+
+let showContentTimerId;
+let hideIntroTimerId;
+
+onMounted(() => {
+  showContentTimerId = window.setTimeout(() => {
+    showPageContent.value = true;
+  }, 1040);
+
+  hideIntroTimerId = window.setTimeout(() => {
+    showIntroAnimation.value = false;
+  }, 1100);
+});
+
+onBeforeUnmount(() => {
+  window.clearTimeout(showContentTimerId);
+  window.clearTimeout(hideIntroTimerId);
+});
+
 const projects = [
   {
     title: "Blueshift White-Label Revamp",
@@ -149,7 +173,6 @@ const projects = [
     impact:
       "Delivered end-to-end features by directly gathering requirements from clients and translating them into production-ready workflows.",
     stack: ["Vue.js", "WebSockets", "Broker APIs", "SCSS", "Design Systems"],
-    liveUrl: "https://blueshift.quantinsti.com/",
   },
   {
     title: "Nescafe.com Complete Rewrite",
@@ -167,7 +190,6 @@ const projects = [
     impact:
       "Improved visual experience and global readiness of the platform while keeping components production-stable.",
     stack: ["React", "GSAP", "Three.js", "Webpack"],
-    liveUrl: "https://www.nescafe.com/",
   },
   {
     title: "Cargogen + Sentree AI",
@@ -185,7 +207,6 @@ const projects = [
     impact:
       "Reduced frontend delivery friction by creating reusable patterns and owning implementation across product lines.",
     stack: ["Nuxt.js", "Element UI", "Tailwind CSS", "SASS", "AWS"],
-    liveUrl: "#",
   },
 ];
 </script>
@@ -195,6 +216,42 @@ const projects = [
   min-height: 100vh;
   background: var(--color-bg);
   color: var(--color-text);
+}
+
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg);
+}
+
+.typewriter {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: var(--heading-h2);
+  font-weight: 700;
+  border-right: 2px solid var(--color-text);
+  animation: typing 950ms steps(11, end) 60ms forwards, cursor 600ms step-end infinite;
+}
+
+.page-content {
+  opacity: 0;
+  transform: translateY(12px);
+  filter: blur(3px);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.page-content.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
 }
 
 .site-header {
@@ -392,15 +449,6 @@ h1 {
   opacity: 0.9;
 }
 
-.project-bottom {
-  margin-top: 1.2rem;
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
 .pill {
   font-size: var(--body-xs);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -420,18 +468,6 @@ h1 {
 .tag-list li {
   font-size: var(--body-xs);
   opacity: 0.85;
-}
-
-.project-links {
-  margin-top: 1.4rem;
-  display: flex;
-  gap: 1rem;
-}
-
-.project-links a {
-  color: var(--color-text);
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 .plain-list {
@@ -469,6 +505,22 @@ h1 {
   justify-content: center;
   font-size: var(--body-sm);
   gap: 0.6rem;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 11ch;
+  }
+}
+
+@keyframes cursor {
+  to {
+    border-right-color: transparent;
+  }
 }
 
 @media (max-width: 900px) {
