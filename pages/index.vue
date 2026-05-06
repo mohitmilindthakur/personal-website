@@ -9,6 +9,7 @@
         <nav class="max-width-container nav">
           <a class="brand" href="#home">mohit.thakur()</a>
           <ul class="nav-list">
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -17,19 +18,25 @@
         </nav>
       </header>
 
-      <main id="home" class="max-width-container content">
-      <section id="about" class="hero section">
+      <main class="max-width-container content">
+      <section id="home" class="hero section">
         <p class="eyebrow">FRONTEND DEVELOPER</p>
         <h1>Professionally functional. Existentially unresolved.</h1>
-        <p class="lead">
-  Frontend Developer with 6.5 years of experience in Vue.js and React, working across fintech, logistics,
-  healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
-  solution used by one of India's largest brokers. Previously developed web applications for brands like
-  Nescafe and Starbucks, and SaaS products in logistics and healthcare.
+        <p class="lead lead--existential">
+          I write code that tells machines what to render, and they comply without a single existential detour, while I spend the gaps between commits quietly questioning whether the interfaces I build are windows into something meaningful, or just beautifully styled distractions from the fact that none of us really know what we're doing here.
         </p>
-        <p class="lead">
-          I write code that tells machines what to render. They comply without hesitation, while I wonder
-          whether this universe is just a side project shipped to production too early.
+      </section>
+
+      <section id="about" class="section about-section">
+        <div class="section-head">
+          <h2>About</h2>
+          <p>The practical version, for humans who skim.</p>
+        </div>
+        <p class="lead lead--bio">
+          Frontend Developer with 6.5 years of experience in Vue.js and React, working across fintech, logistics,
+          healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
+          solution used by one of India's largest brokers. Previously developed web applications for brands like
+          Nescafe and Starbucks, and SaaS products in logistics and healthcare.
         </p>
 
         <div class="hero-actions">
@@ -327,6 +334,14 @@ h1 {
   margin-top: 1.6rem;
   font-size: var(--body-lg);
   opacity: 0.92;
+}
+
+.about-section .lead--bio {
+  margin-top: 0;
+}
+
+.lead--existential {
+  opacity: 0.88;
 }
 
 .hero-actions {
