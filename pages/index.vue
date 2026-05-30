@@ -33,8 +33,8 @@
           <p>The practical version, for humans who skim.</p>
         </div>
         <p class="lead lead--bio">
-          Frontend Developer with 6.5 years of experience in and React Vue.js , working across fintech, logistics,
-          healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
+          Frontend Developer with 6.5 years of experience in and React and Vue.js, working across fintech, logistics,
+          healthcare, and consumer brands. Currently at Quantinsti, building algo trading tools and a white-label
           solution used by one of India's largest brokers. Previously developed web applications for brands like
           Nescafe and Starbucks, and SaaS products in logistics and healthcare.
         </p>
@@ -166,7 +166,7 @@ onBeforeUnmount(() => {
 
 const projects = [
   {
-    title: "Blueshift White-Label Revamp",
+    title: "Blueshift White-Label",
     company: "Quantinsti",
     role: "Frontend Engineer (sole frontend owner for 1+ year)",
     period: "2023 - Present",
@@ -213,7 +213,7 @@ const projects = [
     ],
     impact:
       "Reduced frontend delivery friction by creating reusable patterns and owning implementation across product lines.",
-    stack: ["React", "Redux", "Reacct Router"],
+    stack: ["React", "Redux", "React Router"],
   },
 ];
 </script>
