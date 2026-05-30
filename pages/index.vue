@@ -33,7 +33,7 @@
           <p>The practical version, for humans who skim.</p>
         </div>
         <p class="lead lead--bio">
-          Frontend Developer with 6.5 years of experience in Vue.js and React, working across fintech, logistics,
+          Frontend Developer with 6.5 years of experience in and React Vue.js , working across fintech, logistics,
           healthcare, and consumer brands. Currently at Quantinsti, building trading tools and a white-label
           solution used by one of India's largest brokers. Previously developed web applications for brands like
           Nescafe and Starbucks, and SaaS products in logistics and healthcare.
@@ -85,8 +85,8 @@
           <article class="card">
             <h3>Frontend</h3>
             <ul class="plain-list">
-              <li>Vue / Nuxt</li>
               <li>React / Next.js</li>
+              <li>Vue / Nuxt</li>
               <li>TypeScript</li>
               <li>SCSS / Tailwind</li>
             </ul>
@@ -213,7 +213,7 @@ const projects = [
     ],
     impact:
       "Reduced frontend delivery friction by creating reusable patterns and owning implementation across product lines.",
-    stack: ["Nuxt.js", "Element UI", "Tailwind CSS", "SASS", "AWS"],
+    stack: ["React", "Redux", "Reacct Router"],
   },
 ];
 </script>
